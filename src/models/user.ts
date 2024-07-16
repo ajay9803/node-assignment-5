@@ -4,12 +4,12 @@ import { User } from "../interfaces/user";
 import { adminCheck } from "../utils/admin_check";
 
 // keep track of user's count to avoid duplicate user id's
-let userCount = 2;
+let userCount = 1;
 
 // initial admin and random user
 export const users: User[] = [
   {
-    id: "1",
+    id: "0",
     name: "Admin",
     email: "admin@gmail.com",
     password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
@@ -25,7 +25,7 @@ export const users: User[] = [
     ],
   },
   {
-    id: "2",
+    id: "1",
     name: "test 1",
     email: "test1@gmail.com",
     password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
@@ -65,9 +65,13 @@ export const updateUserById = (
 ) => {
   const user = users.find((user) => user.id === id);
 
-  user.email = theUser.email;
-  user.name = theUser.name;
-  user.password = theUser.password;
+  if (user) {
+    user.email = theUser.email;
+    user.name = theUser.name;
+    user.password = theUser.password;
+  }
+
+  
   return user;
 };
 

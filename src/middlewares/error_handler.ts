@@ -6,6 +6,7 @@ import { NotFoundError } from "../error/not_found_error";
 import { InvalidError } from "../error/invalid_error";
 import { UnauthorizedError } from "../error/unauthorized_error";
 import { ConflictError } from "../error/conflict_error";
+import { BadRequestError } from "../error/bad_request_error";
 
 const logger = loggerWithNameSpace("ErrorHandler");
 
@@ -50,9 +51,15 @@ export const genericErrorHandler = (
       message: error.message,
     });
   }
-
-  // default error message - Internal Server Error
-  return res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({
-    message: error.message || "Internal Server Error",
-  });
+  // check if the retrieved error is an instance of bad request error
+  else if (error instanceof BadRequestError) {
+    return res.status(HttpStatusCodes.BAD_REQUEST).json({
+      message: error.message,
+    });
+  } else {
+    // default error message - Internal Server Error
+    return res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({
+      message: error.message || "Internal Server Error",
+    });
+  }
 };

@@ -2,12 +2,12 @@ import { NotFoundError } from "../error/not_found_error";
 import { Todo } from "../interfaces/todo";
 
 // track todo's to avoid duplicate id's
-let todosCount = 2;
+let todosCount = 1;
 
 // initialize todos with test values
 export const todos: Todo[] = [
   {
-    id: "1",
+    id: "0",
     title: "Todo 1",
     description: "This is todo 1",
     userId: "2",
@@ -16,7 +16,7 @@ export const todos: Todo[] = [
     isCompleted: false,
   },
   {
-    id: "2",
+    id: "1",
     title: "Todo 2",
     description: "This is todo 2",
     userId: "2",

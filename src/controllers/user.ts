@@ -45,6 +45,7 @@ export const getUserById = (
     // send success message
     res.status(result.statusCode).send(result);
   } catch (e) {
+    console.log("yeta error");
     // send error to generic error handler
     next(e);
   }
