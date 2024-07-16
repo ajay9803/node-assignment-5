@@ -1,8 +1,6 @@
 # Node.js Assignment 5
 
-This is a Node.js application for managing users and their to-do items. The application includes user authentication and authorization using JWT, CRUD operations for users (restricted to super admin), and CRUD operations for to-do items for each user.
-
-Data validation has been added to all the routes using Joi package.
+This is a Node.js application for managing users and their to-do items. The application includes user authentication and authorization using JWT, CRUD operations for users (restricted to super admin), and CRUD operations for to-do items for each user. 
 
 ## Features
 
@@ -22,3 +20,19 @@ Data validation has been added to all the routes using Joi package.
 
 1. Clone the repository
    git clone https://github.com/ajay9803/node-assignment-4
+
+2. Install packages
+   npm install
+
+## Testing
+Two basic testings have been done.
+
+# Unit Testing
+Packages Used: **Mocha**, **Sinon** and **Expect**.
+
+Run **npm run test** to run all the unit tests 
+
+# Integration Testing
+Packages Used: **Mocha**, **Sinon**, **Expect** and **Supertest**.
+
+Run **npm run test:integration** to run all the unit tests 

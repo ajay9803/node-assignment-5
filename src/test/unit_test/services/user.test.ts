@@ -223,10 +223,10 @@ describe("User Service Test Suite", () => {
     });
 
     // user deleted - test case
-    it("Should return 204 statusCode when user is deleted", () => {
+    it("Should return no-content statusCode when user is deleted", () => {
       const response = deleteUserById("1");
 
-      expect(response.statusCode).toStrictEqual(204);
+      expect(response.statusCode).toStrictEqual(HttpStatusCodes.NO_CONTENT);
     });
   });
 });

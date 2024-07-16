@@ -29,7 +29,7 @@ export const createUser = async (user: Omit<User, "id">) => {
 
   // return success-message
   return {
-    statusCode: 201,
+    statusCode: HttpStatusCodes.CREATED,
     message: "User created successfully",
   };
 };

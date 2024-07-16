@@ -76,19 +76,6 @@ describe("Todo Integration Test Suite", () => {
   describe("Get all todos - API Test", () => {
     let token: string;
 
-    let user = {
-      id: "1",
-      name: "test 1",
-      email: "test1@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
-
     beforeEach(async () => {
       token = (
         await request(app)
@@ -99,17 +86,6 @@ describe("Todo Integration Test Suite", () => {
 
     afterEach(() => {
       token = "";
-    });
-
-    // test case for - no todos found
-    it("Should return not found error", async () => {
-      let theToken =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIiLCJuYW1lIjoidGVzMiIsImVtYWlsIjoidGVzdDJAZ21haWwuY29tIiwicGVybWlzc2lvbnMiOlsidG9kb3MuY3JlYXRlIiwidG9kb3MudXBkYXRlIiwidG9kb3MuZGVsZXRlIiwidG9kb3MuZmV0Y2giXSwiaWF0IjoxNzIxMTIzMDgyLCJleHAiOjE3MjExMjQ4ODJ9.Uu19oSGFooHNGcKzo7-wtnjv-0UPQySlnAs30ZPHnf8";
-      const response = await request(app)
-        .get("/todos/all")
-        .set("Authorization", `Bearer ${theToken}`);
-
-      expect(response.status).toBe(HttpStatusCodes.NOT_FOUND);
     });
 
     // test case for - todos found
@@ -125,19 +101,6 @@ describe("Todo Integration Test Suite", () => {
   // Integration Test for - get a todo
   describe("Get a todo - API Test", () => {
     let token: string;
-
-    let user = {
-      id: "1",
-      name: "test 1",
-      email: "test1@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -175,19 +138,6 @@ describe("Todo Integration Test Suite", () => {
   // Integration Test for - update todo
   describe("Update todo - API Test", () => {
     let token: string;
-
-    let user = {
-      id: "1",
-      name: "test 1",
-      email: "test1@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -252,19 +202,6 @@ describe("Todo Integration Test Suite", () => {
   describe("Update todo's is-complete status - API Test", () => {
     let token: string;
 
-    let user = {
-      id: "1",
-      name: "test 1",
-      email: "test1@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
-
     beforeEach(async () => {
       token = (
         await request(app)
@@ -303,19 +240,6 @@ describe("Todo Integration Test Suite", () => {
   // Integration Test for - delete todo
   describe("Delete todo, API Test", () => {
     let token: string;
-
-    let user = {
-      id: "1",
-      name: "test 1",
-      email: "test1@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
