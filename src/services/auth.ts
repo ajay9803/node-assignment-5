@@ -6,7 +6,6 @@ import { getUserByEmail } from "./user";
 import bcrypt from "bcrypt";
 import { verify, sign, JsonWebTokenError } from "jsonwebtoken";
 import { User } from "../interfaces/user";
-import { permission } from "process";
 
 export const login = async (email: string, password: string) => {
   // fetch existing user by email

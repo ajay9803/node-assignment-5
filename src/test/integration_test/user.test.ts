@@ -17,10 +17,7 @@ describe("User Integration Test Suite", () => {
     it("Should create a new user", async () => {
       const response = await request(app)
         .post("/users")
-        .set(
-          "Authorization",
-          `Bearer ${token}`
-        )
+        .set("Authorization", `Bearer ${token}`)
         .send({
           id: "2",
           name: "test 1",
