@@ -65,18 +65,15 @@ export const updateUserById = (
 ) => {
   const user = users.find((user) => user.id === id);
 
-  if (user) {
-    user.email = theUser.email;
-    user.name = theUser.name;
-    user.password = theUser.password;
-    return user;
-  } else {
-    throw new NotFoundError("No such user found.");
-  }
+  user.email = theUser.email;
+  user.name = theUser.name;
+  user.password = theUser.password;
+  return user;
 };
 
 // delete user by id
 export const deleteUserById = (id: string) => {
+  console.log("hello");
   const index = users.findIndex((user) => user.id === id);
 
   // forbid admin from deleting itself
