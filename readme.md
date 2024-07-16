@@ -18,10 +18,10 @@ This is a Node.js application for managing users and their to-do items. The appl
 
 ## Installation
 
-1. Clone the repository
+1. Clone the repository:
    git clone https://github.com/ajay9803/node-assignment-4
 
-2. Install packages
+2. Install packages:  
    npm install
 
 ## Testing
