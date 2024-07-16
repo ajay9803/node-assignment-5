@@ -77,7 +77,6 @@ export const updateUserById = (
 
 // delete user by id
 export const deleteUserById = (id: string) => {
-  console.log("hello");
   const index = users.findIndex((user) => user.id === id);
 
   // forbid admin from deleting itself

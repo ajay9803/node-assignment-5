@@ -17,7 +17,6 @@ export const login = async (email: string, password: string) => {
     throw error;
   }
 
-  
   // check for password validation
   const isValidPassword = await bcrypt.compare(password, existingUser.password);
 

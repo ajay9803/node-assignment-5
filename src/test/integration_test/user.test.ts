@@ -17,27 +17,25 @@ describe("User Integration Test Suite", () => {
 
   // pass error handling middleware
   app.use(genericErrorHandler);
+  const superUser: Omit<User, "password"> = {
+    id: "1",
+    name: "Admin",
+    email: "admin@gmail.com",
+    permissions: [
+      "users.create",
+      "users.update",
+      "users.delete",
+      "users.fetch",
+      "todos.create",
+      "todos.update",
+      "todos.delete",
+      "todos.fetch",
+    ],
+  };
 
   // integration test for - create user
   describe("Create user - API Test", () => {
     let token: string;
-
-    const superUser: User = {
-      id: "1",
-      name: "Admin",
-      email: "admin@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "users.create",
-        "users.update",
-        "users.delete",
-        "users.fetch",
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -46,8 +44,6 @@ describe("User Integration Test Suite", () => {
           password: "Test@9803",
         })
       ).body.accessToken;
-
-      console.log("Access Token: ", token);
     });
 
     afterEach(() => {
@@ -107,22 +103,6 @@ describe("User Integration Test Suite", () => {
   // integration test for - get user by id
   describe("Get user by id - API test", () => {
     let token: string;
-    const superUser: User = {
-      id: "1",
-      name: "Admin",
-      email: "admin@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "users.create",
-        "users.update",
-        "users.delete",
-        "users.fetch",
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -131,8 +111,6 @@ describe("User Integration Test Suite", () => {
           password: "Test@9803",
         })
       ).body.accessToken;
-
-      console.log("Access Token: ", token);
     });
 
     afterEach(() => {
@@ -165,22 +143,6 @@ describe("User Integration Test Suite", () => {
   // Integration test for - update user by id
   describe("Updade user by id - API test", () => {
     let token: string;
-    const superUser: User = {
-      id: "1",
-      name: "Admin",
-      email: "admin@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "users.create",
-        "users.update",
-        "users.delete",
-        "users.fetch",
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -189,8 +151,6 @@ describe("User Integration Test Suite", () => {
           password: "Test@9803",
         })
       ).body.accessToken;
-
-      console.log("Access Token: ", token);
     });
 
     afterEach(() => {
@@ -255,22 +215,6 @@ describe("User Integration Test Suite", () => {
   // Integration test for - delete user by id
   describe("Delete user by id - API Test", () => {
     let token: string;
-    const superUser: User = {
-      id: "1",
-      name: "Admin",
-      email: "admin@gmail.com",
-      password: "$2b$10$qU4R6tjzgsJIRYNEuzGSAO7cL2qDGg2.N4QMw0w2GXQvA1hM36R2W",
-      permissions: [
-        "users.create",
-        "users.update",
-        "users.delete",
-        "users.fetch",
-        "todos.create",
-        "todos.update",
-        "todos.delete",
-        "todos.fetch",
-      ],
-    };
 
     beforeEach(async () => {
       token = (
@@ -279,8 +223,6 @@ describe("User Integration Test Suite", () => {
           password: "Test@9803",
         })
       ).body.accessToken;
-
-      console.log("Access Token: ", token);
     });
 
     afterEach(() => {
