@@ -44,7 +44,7 @@ export const getUserById = (id: string) => {
       statusCode: HttpStatusCodes.OK,
       message: "User fetched successfully.",
       user: data,
-    }; 
+    };
   } else {
     // throw user-user-not-found error
     const error = new NotFoundError("User not found.");

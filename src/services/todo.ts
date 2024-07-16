@@ -29,7 +29,7 @@ export const getAllTodos = (userId: string) => {
   } else {
     return {
       statusCode: 200,
-      message: todos,
+      todos: todos,
     };
   }
 };
@@ -43,7 +43,7 @@ export const getTodoById = (todoId: string, userId: string) => {
   } else {
     return {
       statusCode: 200,
-      message: todo,
+      todo: todo,
     };
   }
 };
@@ -64,10 +64,7 @@ export const updateTodo = (
 };
 
 // update todo's is-complete status
-export const updateTodoIsCompleteStatus = (
-  id: string,
-  userId: string
-) => {
+export const updateTodoIsCompleteStatus = (id: string, userId: string) => {
   TodoModel.updateTodoCompletedStatus(id, userId);
 
   return {

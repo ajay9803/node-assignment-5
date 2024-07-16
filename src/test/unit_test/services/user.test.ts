@@ -141,7 +141,7 @@ describe("User Service Test Suite", () => {
     });
 
     // test case for - no user found
-    it("Returns no found error", () => {
+    it("Should throw not-found-error", () => {
       userModelGetUserByEmailStub.returns(undefined);
 
       const response = getUserByEmail("test@gmail.com");
@@ -150,7 +150,7 @@ describe("User Service Test Suite", () => {
     });
 
     // test case for - user found
-    it("Retuns user", () => {
+    it("Should return user", () => {
       const user = {
         id: "1",
         name: "Test",
@@ -185,7 +185,7 @@ describe("User Service Test Suite", () => {
     };
 
     // test case for - user not found
-    it("Returns no user found if user id isn't found", () => {
+    it("Should throw not-found-error, if user id isn't found", () => {
       userModelUpdateUserById.returns(undefined);
 
       expect(() => updateUserById("1", updatingValues)).toThrow(
@@ -194,7 +194,7 @@ describe("User Service Test Suite", () => {
     });
 
     // test case for - user updated
-    it("Returns updated user found, if user is found", () => {
+    it("Should return updated user, if user is found", () => {
       let updatedUser = {
         id: "1",
         name: "example",
